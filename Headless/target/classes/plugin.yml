@@ -1,0 +1,66 @@
+name: Headless
+version: 1.0-SNAPSHOT
+main: me.bigtallahasee.headless.Headless
+api-version: 1.17
+authors: [ Bigtallahasee ]
+description: With this you can set bounty's and cut the heads off your foes
+softdepend: [Vault]
+commands:
+  setname:
+    description: Sets the name of a skull
+    permission: headless.setname
+    permission-message: You may not set head names
+    usage: /<command> [playername]
+  clearname:
+    description: Clears the name of a skull
+    permission: headless.clearname
+    permission-message: You may not clear head names
+    usage: /<command>
+  spawnhead:
+    description: Spawns a player head with the given name
+    permission: headless.spawnhead
+    permission-message: You may not spawn heads
+    usage: /<command> [playername] <quantity> <player>
+  bounty:
+    description: Place, claim, and search bounties bounties
+    usage: /<command>
+permissions:
+  headless.setname:
+    description: Set the name of skulls
+  headless.clearname:
+    description: Clear the name of skulls
+  headless.spawnhead:
+    description: Spawn heads with a given name
+    children:
+      headless.setname: true
+  headless.dropheads:
+    description: Ability to drop heads on death
+    default: true
+  headless.collectheads:
+    description: Ability to collect heads when killing another player
+    default: true
+  headless.info:
+    description: Get the name of a head
+  headless.bounty:
+    description: Place, claim, and search bounties bounties
+    children:
+      headless.bounty.search: true
+      headless.bounty.list: true
+      headless.bounty.place: true
+      headless.bounty.claim: true
+      headless.bounty.remove: true
+      headless.bounty.listown: true
+  headless.bounty.search:
+    description: Search bounties
+  headless.bounty.list:
+    description: List bounties
+  headless.bounty.place:
+    description: Place bounties
+  headless.bounty.claim:
+    description: Claim (turn in) bounties
+  headless.bounty.remove:
+    description: Remove own bounties
+  headless.bounty.listown:
+    description: List own bounties
+  headless.bounty.viewissuer:
+    description: View who placed bounties when listing

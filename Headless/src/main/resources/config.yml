@@ -1,0 +1,15 @@
+dropSkulls:
+  allDeaths: 0
+  killedByPlayer: 1
+  placeInKillerInv: false
+bounty:
+  enabled: false
+  tax: .05
+  huntedDropOnly: false
+  canClaimOwn: true
+  minimum: 10
+datastorage: yaml
+database:
+  url: jdbc:mysql://localhost:3306/database
+  username: minecraft
+  password: lolololol
